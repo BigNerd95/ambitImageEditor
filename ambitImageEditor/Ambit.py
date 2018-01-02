@@ -81,10 +81,10 @@ class Image():
         return self.makeHeader() + self.rootfs + self.kernel
 
     def __str__(self):
-        return "FW region:  " + str(regions[self.values.fw_region_index]) + "\n" \
-               "SW version: " + ".".join(map(str, self.values.sw_version))   + "\n" \
-               "UI version: " + ".".join(map(str, self.values.ui_version))      + "\n" \
-               "Board ID:   " + str(self.values.board_id.decode("ascii"))        + "\n" \
+        return "FW region:  " + str(regions[self.values.fw_region_index])  + "\n" \
+               "SW version: " + ".".join(map(str, self.values.sw_version)) + "\n" \
+               "UI version: " + ".".join(map(str, self.values.ui_version)) + "\n" \
+               "Board ID:   " + str(self.values.board_id.decode("ascii"))  + "\n" \
                "Sizes:\n" + \
                "\tHeader: " + str(self.values.size)         + " bytes\n" \
                "\tRootFS: " + str(self.values.rootfs_size)  + " bytes\n" \
@@ -95,9 +95,7 @@ class Image():
                "\tKernel:          " + str(hex(self.values.kernel_checksum))         + "\n" \
                "\tRootFS + Kernel: " + str(hex(self.values.rootfs_kernel_checksum))  + "\n"
 
-#checksum_fun = crcmod.predefined.mkCrcFun(CHECKSUM_TYPE)
 def checksum(data):
-    #return checksum_fun(data)
     adder0 = adder1 = 0
 
     for b in data:
