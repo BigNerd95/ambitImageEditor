@@ -7,6 +7,7 @@ from construct import *
 # Ambit constants
 FIXED_HEADER_LEN = 40
 MAX_HEADER_SIZE  = FIXED_HEADER_LEN + 200
+
 regions = [ "NONE_VERSION", "WW_VERSION",  "NA_VERSION",
             "JP_VERSION",   "GR_VERSION",  "PR_VERSION",
             "KO_VERSION",   "RU_VERSION",  "SS_VERSION",
@@ -42,7 +43,7 @@ class Image():
         self.kernel = fd.read(self.values.kernel_size)
 
 
-    def __header_crc__(self):
+    def __header_checksum__(self):
         self.values.header_checksum = 0
         return checksum(self.makeHeader())
 
@@ -57,7 +58,7 @@ class Image():
         self.values.rootfs_checksum = checksum(self.rootfs)
         self.values.kernel_checksum = checksum(self.kernel)
         self.values.rootfs_kernel_checksum = checksum(self.rootfs + self.kernel)
-        self.values.header_checksum = self.__header_crc__() # must be the latest to be updated!!!
+        self.values.header_checksum = self.__header_checksum__() # must be the latest to be updated!!!
 
     def update(self):
         self.__update_sizes__()
@@ -95,6 +96,7 @@ class Image():
                "\tKernel:          " + str(hex(self.values.kernel_checksum))         + "\n" \
                "\tRootFS + Kernel: " + str(hex(self.values.rootfs_kernel_checksum))  + "\n"
 
+# Fletcher-32 checksum
 def checksum(data):
     adder0 = adder1 = 0
 
