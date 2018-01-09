@@ -9,15 +9,15 @@ My work is based on tools provided in the [GPL](https://www.downloads.netgear.co
 ## Usage
 ### Info  
 Show firmware image info    
-`./bcmImageEditor.py info -i DGN2200v4.chk`
+`./ambitImageEditor.py info -i DGN2200v4.chk`
 
 ### Split  
 Extract rootfs and kernel from a firmware image     
-`./bcmImageEditor.py split -i DGN2200v4.chk -d extract`
+`./ambitImageEditor.py split -i DGN2200v4.chk -d extract`
 
 ### Merge
 Create a new firmware image with custom rootfs and kernel     
-`./bcmImageEditor.py merge -i DGN2200v4.chk -o Custom2200v4.chk -r extract/rootfs -k extract/kernel`
+`./ambitImageEditor.py merge -i DGN2200v4.chk -o Custom2200v4.chk -r extract/rootfs -k extract/kernel`
 
 ## Examples
 You can find a guide about creating a custom firmware [here](GUIDE.md)
