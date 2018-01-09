@@ -18,13 +18,15 @@ Skip this step if your modem router is already running with the firmware version
 `./ambitImageEditor.py split -i Original_FW.chk -d extract`  
 This will create a folder named `extract` with `kernel` and `rootfs` files.  
 
-Note: this firmware is using only "Kernel" part of the image to store the RootFS (with the kernel inside). 
-Different firmware may be different!  
+Note about this firmware:
+- it is using only the "Kernel" part of the image to store the RootFS (with the kernel inside).  
+- the Kernel file, has a token (we need to remove and readd it).  
+(Others firmware may not have these things).  
 
 5) Remove vtoken  
-`./vtoken.py remove -i extract/rootfs -o rootfs.clean`
+`./vtoken.py remove -i extract/rootfs -o rootfs.clean`  
 (You can find this tool inside tools directory)  
-(Annotate the Flash type!)  
+(Annotate the Flash type for step 8!)  
 
 6) Decompress file system  
 `sudo binwalk -e extract/rootfs.clean`  
