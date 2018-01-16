@@ -39,8 +39,8 @@ You can find a guide about creating a custom firmware [here](GUIDE.md)
 | 3 | Unsigned BE Int  8 | UI version | Eg: 1.0.98 |
 | 4 | Unsigned BE Int 32 | Kernel checksum | Variant of Fletcher 32 checksum |
 | 4 | Unsigned BE Int 32 | RootFS checksum | Variant of Fletcher 32 checksum |
-| 4 | Unsigned BE Int 32 | Kernel size | CFE starting address (if non zero) |
-| 4 | Unsigned BE Int 32 | RootFS size | CFE size in clear ASCII text (if non zero) |
+| 4 | Unsigned BE Int 32 | Kernel size | In some firmware is 0 because it is inside RootFS |
+| 4 | Unsigned BE Int 32 | RootFS size | In byte |
 | 4 | Unsigned BE Int 32 | RootFS + Kernel checksum | Variant of Fletcher 32 checksum |
 | 4 | Unsigned BE Int 32 | Header checksum | Variant of Fletcher 32 checksum (with this field set to 0, Board ID included) |
 | 0-200 | String | Board ID | Eg: U12L227T01_NETGEAR |
