@@ -1,7 +1,7 @@
 # ambitImageEditor
 Ambit Image Editor tool
 
-With this tool you can edit official firmwares of some modem router (like Netgear) created by "packet" executable.  
+With this tool you can edit official firmwares (.CHK) of some modem router (like Netgear) created by "packet" executable.  
 This tool can change the kernel and the file system of an official firmware.  
 
 My work is based on tools provided in the [GPL](https://www.downloads.netgear.com/files/GPL/DGN2200v4_V1.0.0.98_1.0.98_src_full.zip) archive of DGN2200v4.  
