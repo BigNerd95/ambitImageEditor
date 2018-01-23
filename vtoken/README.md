@@ -2,6 +2,7 @@
 Some files have a footer of 20 bytes.
 This tools allows you to remove or merge this footer for creating custom firmware.   
 
+## Usage
 ### Info
 Show vtoken info    
 `./vtoken.py info -i file.original`  
