@@ -21,15 +21,15 @@ using vtoken of original file (file.original) and data of custom file (file.new.
 ## VToken structure  
 | Size (byte)  | Type | Name | Description |
 | :----------: | ---- | ---- | ------- |
-| 4 | Unsigned LE Int 32 | File CRC | JamCRC |
-| 4 | Unsigned LE Int 32 | Magic    | 0x32570000 |
+| 4 | Unsigned BE Int 32 | File CRC | JamCRC |
+| 4 | Unsigned BE Int 32 | Magic    | 0x32570000 |
 | 4 | Unsigned BE Int 32 | Chip     | Eg: 6328 |
-| 4 | Unsigned LE Int 32 | Flash Type | See Flash Type list below |
-| 4 | Unsigned LE Int 32 | Unused | It's always 0 |
+| 4 | Unsigned BE Int 32 | Flash Type | See Flash Type list below |
+| 4 | Unsigned BE Int 32 | Unused | It's always 0 |
 
 ### Flash types  
-|     ID     | Type |  
-| :--------: | ---- |  
-| 0x01000000 | NOR | 
-| 0x02000000 | NAND  16 | 
-| 0x03000000 | NAND 128 | 
+|  ID  |   Type   |  
+| :--: | -------- |  
+|  1   | NOR      | 
+|  2   | NAND  16 | 
+|  3   | NAND 128 | 
