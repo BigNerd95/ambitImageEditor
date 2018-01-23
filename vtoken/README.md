@@ -1,9 +1,6 @@
 # VToken
 Some files have a footer of 20 bytes.
-This tools allows you to remove or merge this footer for creating custom firmware.  
-
-# TODO  
-This tool is WIP  
+This tools allows you to remove or merge this footer for creating custom firmware.   
 
 ### Info
 Show vtoken info    
@@ -22,7 +19,7 @@ using vtoken of original file (file.original) and data of custom file (file.new.
 | Size (byte)  | Type | Name | Description |
 | :----------: | ---- | ---- | ------- |
 | 4 | Unsigned BE Int 32 | File CRC | JamCRC |
-| 4 | Unsigned BE Int 32 | Magic    | 0x32570000 |
+| 4 | Unsigned BE Int 32 | Magic    | 0x00005732 |
 | 4 | Unsigned BE Int 32 | Chip     | Eg: 6328 |
 | 4 | Unsigned BE Int 32 | Flash Type | See Flash Type list below |
 | 4 | Unsigned BE Int 32 | Unused | It's always 0 |
