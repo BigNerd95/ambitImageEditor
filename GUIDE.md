@@ -24,7 +24,7 @@ Note about this firmware:
 (Others firmware may not have these things).  
 
 5) Remove vtoken  
-`./vtoken.py remove -i extract/kernel -o kernel.clean`  
+`./vtoken.py remove -i extract/kernel -o extract/kernel.clean`  
 (You can find this tool inside tools directory)  
 (Annotate the Flash type for step 8!)  
 
