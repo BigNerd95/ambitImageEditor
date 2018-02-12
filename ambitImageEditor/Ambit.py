@@ -26,7 +26,7 @@ ambitHeader = Struct(
     "rootfs_size" / Int32ub,
     "rootfs_kernel_checksum" / Int32ub,
     "header_checksum" / Int32ub,
-    "board_id" / String(this.size - FIXED_HEADER_LEN),
+    "board_id" / String(this.size - FIXED_HEADER_LEN, StringsAsBytes),
 )
 
 class Image():
