@@ -19,6 +19,9 @@ Extract rootfs and kernel from a firmware image
 Create a new firmware image with custom rootfs and kernel     
 `./ambitImageEditor.py merge -i DGN2200v4.chk -o Custom2200v4.chk -r extract/rootfs -k extract/kernel`
 
+## Install dependences  
+`pip3 install -r requirements.txt`  
+
 ## Examples
 You can find a guide about creating a custom firmware [here](GUIDE.md)
 
