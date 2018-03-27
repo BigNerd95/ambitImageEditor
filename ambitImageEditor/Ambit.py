@@ -26,7 +26,7 @@ ambitHeader = Struct(
     "rootfs_size" / Int32ub,
     "rootfs_kernel_checksum" / Int32ub,
     "header_checksum" / Int32ub,
-    "board_id" / String(this.size - FIXED_HEADER_LEN, StringsAsBytes),
+    "board_id" / PaddedString(this.size - FIXED_HEADER_LEN, "ascii"),
 )
 
 class Image():
@@ -85,7 +85,7 @@ class Image():
         return "FW region:  " + str(regions[self.values.fw_region_index])  + "\n" \
                "SW version: " + ".".join(map(str, self.values.sw_version)) + "\n" \
                "UI version: " + ".".join(map(str, self.values.ui_version)) + "\n" \
-               "Board ID:   " + str(self.values.board_id.decode("ascii"))  + "\n" \
+               "Board ID:   " + str(self.values.board_id)                  + "\n" \
                "Sizes:\n" + \
                "\tHeader: " + str(self.values.size)         + " bytes\n" \
                "\tRootFS: " + str(self.values.rootfs_size)  + " bytes\n" \
